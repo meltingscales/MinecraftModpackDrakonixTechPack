@@ -108,3 +108,23 @@ logs:
 # list world backups on disk, newest first, with sizes
 list-backups:
     ls -lht "{{backup_dir}}"
+
+# bump pack.toml's version, commit, tag it, and push - the push triggers
+# .github/workflows/release.yml, which builds the zips and publishes a
+# GitHub Release from the tag.
+tag version:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    sed -i "s/^version = .*/version = \"{{version}}\"/" pack/pack.toml
+    (cd pack && packwiz refresh)
+    git add pack/pack.toml pack/index.toml
+    git commit -m "Bump pack version to {{version}}"
+    git tag -a "v{{version}}" -m "v{{version}}"
+    git push origin HEAD "v{{version}}"
+
+# build the zips locally and publish a GitHub Release from the current tag
+# (fallback to the CI workflow - needs `gh` authenticated)
+release: packwiz-export
+    gh release create "$(git describe --tags --abbrev=0)" \
+        build/drakonixtechpack-server.zip build/drakonixtechpack-client.zip \
+        --generate-notes

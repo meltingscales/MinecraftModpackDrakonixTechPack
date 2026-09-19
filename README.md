@@ -5,6 +5,19 @@ Modded Minecraft server: **NeoForge 1.21.1**. Hosting setup is a clone of the si
 the mod bundle sourced from a tracked [Packwiz](https://packwiz.infra.link/) pack
 instead of a hand-dropped CurseForge zip.
 
+## What is this
+
+A tech-focused modpack + self-hosted server setup, in one repo:
+
+- `pack/` is the actual modpack (a packwiz pack — mod list, versions, hashes), the
+  source of truth for what's installed
+- everything else (`justfile`, `systemd/`, `scripts/`) is the infra to build that pack
+  into deployable zips and run it as a systemd-managed server with backups, RCON, and
+  a whitelist
+- pushing a `vX.Y.Z` tag (via `just tag <version>`) builds the pack and publishes
+  server/client zips as a GitHub Release, so players and the server host always pull
+  from the same tagged, reproducible mod list
+
 ## Quickstart
 
 ```
@@ -64,10 +77,23 @@ To add/remove a mod: `packwiz modrinth add <slug>` / `packwiz curseforge add <sl
 `packwiz remove <slug>` from inside `pack/`, then `just packwiz-export` regenerates
 the zips.
 
+## Releasing
+
+```
+just tag 0.2.0    # bumps pack.toml, commits, tags v0.2.0, pushes - CI takes it from there
+```
+
+`.github/workflows/release.yml` picks up the tag push, runs `just packwiz-export`,
+and attaches `drakonixtechpack-server.zip`/`drakonixtechpack-client.zip` to a GitHub
+Release. `just release` does the same build+publish locally (needs `gh` authenticated)
+as a fallback if CI is down.
+
 ## layout
 
-- `justfile` — `packwiz-export`, `setup-user`, `deploy`, `enable/start/stop/restart/
-  status/logs/rcon/ping/list-backups/restore-world/delete-chunk`
+- `justfile` — `packwiz-export`, `tag`, `release`, `setup-user`, `deploy`, `enable/
+  start/stop/restart/status/logs/rcon/ping/list-backups/restore-world/delete-chunk`
+- `.github/workflows/release.yml` — builds + publishes the release zips on `vX.Y.Z`
+  tag push
 - `pack/` — the packwiz pack: `pack.toml`, `index.toml`, `mods/*.pw.toml` (source of
   truth for the mod list — no separate sha256 manifest, packwiz hashes its own files)
 - `systemd/minecraftserver-drakonixtechpack.service` — unit installed to
