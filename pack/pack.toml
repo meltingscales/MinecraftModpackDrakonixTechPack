@@ -1,6 +1,6 @@
 name = "Drakonix Tech Pack"
 author = "Henry Post"
-version = "0.0.5-alpha"
+version = "0.0.6-alpha"
 pack-format = "packwiz:1.1.0"
 
 [index]
