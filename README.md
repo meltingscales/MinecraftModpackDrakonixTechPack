@@ -61,10 +61,12 @@ a substitute instead of the real thing. Two other originally-wanted mods also la
 Everything else in the original wishlist ported natively: Applied Energistics 2,
 Mekanism, Create (+ Create Big Cannons), The Aether, The Twilight Forest, ProjectE,
 Waystones, Corail Tombstone (gravestone mod), JEI, Iris (native NeoForge shaders, no
-Oculus needed). **Ad Astra** (space/planets dimension) was added to answer the
-"not sure what other cool dimensions mods" TODO, alongside **Aquamirae** (ocean
-ship-graveyard dimension) — both are easy to drop via `packwiz remove <slug>` in
-`pack/` if they don't fit actual play.
+Oculus needed). Several dimension mods were added to answer the "not sure what
+other cool dimensions mods" TODO — see [Dimensions](#dimensions) below for the full
+list and how to reach each one. (**Aquamirae** and **Deeper and Darker** were also
+added around the same time but don't add new dimensions — they add overworld
+structures/biomes instead.) All of these are easy to drop via `packwiz remove <slug>`
+in `pack/` if they don't fit actual play.
 
 ## Mods
 
@@ -78,6 +80,22 @@ cd pack && packwiz list
 To add/remove a mod: `packwiz modrinth add <slug>` / `packwiz curseforge add <slug>` /
 `packwiz remove <slug>` from inside `pack/`, then `just packwiz-export` regenerates
 the zips.
+
+## Dimensions
+
+8 mods add real new dimensions (not counting Aquamirae or Deeper and Darker, which
+add overworld structures/biomes rather than a new dimension):
+
+| Dimension | How to get there | Docs |
+|---|---|---|
+| **The Aether** | Build a rectangular glowstone frame (min 4×5), then fill the inside with water (bucket, or melt ice in it). | [Aether Wiki](https://aether.wiki.gg/wiki/The_Aether/The_Aether) |
+| **The Twilight Forest** | Dig a 2×2 (up to 8×8) pool, fill with water source blocks, ring it with ≥12 flowers/mushrooms/saplings, then throw a diamond into the water. | [Twilight Forest Wiki](https://twilightforest.fandom.com/wiki/Twilight_Forest_Portal) |
+| **Ad Astra** (space: Moon, Mars, etc.) | Craft a Tier 1 Rocket at a NASA Workbench, fuel it (3 buckets), put it on a Launch Pad, suit up in a full Space Suit + oxygen tanks, then launch. Carry a spare Launch Pad — the one under the rocket can't be reclaimed after landing. | [Ad Astra Wiki](https://ad-astra-mod.fandom.com/wiki/Ad_Astra_Mod_Wiki) |
+| **The Undergarden** | Craft a Catalyst (gold + iron ingots + a diamond). Build a Nether-portal-shaped frame (4×5 to 23×23) out of Stone/Deepslate/Depthrock/Shiverstone Bricks, in the **Overworld** (frames built elsewhere don't work). Right-click the inner bottom face with the Catalyst. | [Undergarden Wiki](https://the-undergarden-mod.fandom.com/wiki/Undergarden_portal) |
+| **Dimensional Doors** (pocket dimensions) | Craft a Dimensional Door (Iron = new empty pocket, Gold = dungeon, Quartz = your personal pocket, Unstable = random) and place/open it, or right-click a naturally-spawned Rift with a Rift Blade. Careful: dying or void-falling in a pocket can drop you into Limbo. | [Dimensional Doors Wiki](https://dimensional-doors-mod.fandom.com/wiki/Rift) |
+| **Tropicraft** | Craft a Beach Chair (bamboo + wool) and a Piña Colada, place the chair on a beach, sit, and drink before sunrise. A Tropics Portal back in the Overworld (built once you've been there) is the permanent way in afterward. | [Tropicraft Wiki](https://tropicraft.fandom.com/wiki/Tropics_Portal_Enchanter) |
+| **Arda's Sculks** (Ancient World) | Find a vanilla Ancient City, get an Ancient World Portal Igniter, and use it on the Ancient Portal there. | [CurseForge page](https://www.curseforge.com/minecraft/mc-mods/ardas-sculks) |
+| **Create: Dimension, Steamworks Realm** | Build a portal frame out of Andesite blocks, then activate it with a Steamworks Realm Portal Igniter. | [GitHub README](https://github.com/Reggarfgod/Create-Dimension) |
 
 ## Testing in singleplayer
 
