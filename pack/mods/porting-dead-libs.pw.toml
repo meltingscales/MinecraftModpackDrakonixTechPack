@@ -1,0 +1,13 @@
+name = "Porting Dead Libs"
+filename = "portingdeadlibs-1.1.8-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/fKkUaEuN/versions/sBoHobf5/portingdeadlibs-1.1.8-1.21.1.jar"
+hash-format = "sha512"
+hash = "b3feefbafc46c187bd03c3e80f2f5871582a75c69ce24c0f1b742c559185ce25255c0e92a908b1170fe8fd3cd9f8288189af7cc22cbeed914f3f96d88d2e7dee"
+
+[update]
+[update.modrinth]
+mod-id = "fKkUaEuN"
+version = "sBoHobf5"

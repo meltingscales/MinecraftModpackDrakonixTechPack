@@ -1,0 +1,13 @@
+name = "Drakonix Tech Pack"
+author = "Henry Post"
+version = "0.1.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "0ad6148388f5ccebea53c8942114781848e862b43fc203a8a2b0a2be498571fa"
+
+[versions]
+minecraft = "1.21.1"
+neoforge = "21.1.251"

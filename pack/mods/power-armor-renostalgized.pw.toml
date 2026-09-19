@@ -1,0 +1,13 @@
+name = "Power Armor: Renostalgized"
+filename = "power_armor-1.0.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/nrBih7pX/versions/AiCpyKIL/power_armor-1.0.3.jar"
+hash-format = "sha512"
+hash = "01a84099bb4464e0d72f05badbf4c2e7397eed026cb3fab831394a5200b98c85af32c6068c90db01e14d4516a7f6e68879755de1a668148a26e62f8ea06947cf"
+
+[update]
+[update.modrinth]
+mod-id = "nrBih7pX"
+version = "AiCpyKIL"

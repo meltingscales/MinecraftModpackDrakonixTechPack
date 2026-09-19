@@ -1,0 +1,6 @@
+*.zip
+*.tar.gz
+/build/
+/logs/
+*.jar
+__pycache__/
