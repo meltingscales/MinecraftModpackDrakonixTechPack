@@ -1,5 +1,7 @@
 # Drakonix Tech Pack
 
+[**Releases**](https://github.com/meltingscales/MinecraftModpackDrakonixTechPack/releases) — grab the latest server/client zip here.
+
 Modded Minecraft server: **NeoForge 1.21.1**. Hosting setup is a clone of the sibling
 `MinecraftServerLiminalIndustries` repo (same justfile/systemd/scripts pattern), with
 the mod bundle sourced from a tracked [Packwiz](https://packwiz.infra.link/) pack
