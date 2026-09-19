@@ -38,7 +38,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            build/drakonixtechpack-server.zip
-            build/drakonixtechpack-client.zip
+            build/drakonixtechpack-*-server.zip
+            build/drakonixtechpack-*-client.mrpack
           generate_release_notes: true
           prerelease: ${{ contains(github.ref_name, '-alpha') || contains(github.ref_name, '-beta') || contains(github.ref_name, '-rc') }}

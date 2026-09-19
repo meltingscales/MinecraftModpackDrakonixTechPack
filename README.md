@@ -1,6 +1,6 @@
 # Drakonix Tech Pack
 
-[**Releases**](https://github.com/meltingscales/MinecraftModpackDrakonixTechPack/releases) — grab the latest server/client zip here.
+[**Releases**](https://github.com/meltingscales/MinecraftModpackDrakonixTechPack/releases) — grab the latest server zip / client `.mrpack` here.
 
 Modded Minecraft server: **NeoForge 1.21.1**. Hosting setup is a clone of the sibling
 `MinecraftServerLiminalIndustries` repo (same justfile/systemd/scripts pattern), with
@@ -99,7 +99,8 @@ just tag 0.2.0    # bumps pack.toml, commits, tags v0.2.0, pushes - CI takes it 
 ```
 
 `.github/workflows/release.yml` picks up the tag push, runs `just packwiz-export`,
-and attaches `drakonixtechpack-server.zip`/`drakonixtechpack-client.zip` to a GitHub
+and attaches `drakonixtechpack-<version>-server.zip`/`drakonixtechpack-<version>-client.mrpack`
+to a GitHub
 Release. `just release` does the same build+publish locally (needs `gh` authenticated)
 as a fallback if CI is down.
 

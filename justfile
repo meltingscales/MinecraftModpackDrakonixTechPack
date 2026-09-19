@@ -5,6 +5,7 @@ unit := "systemd/" + service + ".service"
 rcon_port := "25577"
 game_port := "25567"
 installer_bootstrap_url := "https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar"
+pack_version := `grep '^version' pack/pack.toml | sed -E 's/version = "(.*)"/\1/'`
 
 default:
     @just --list
@@ -13,30 +14,33 @@ default:
 setup-user:
     sudo bash scripts/setup-user.sh
 
-# fetch packwiz-installer-bootstrap.jar (once) into pack/, used by packwiz-export
+# fetch packwiz-installer-bootstrap.jar (once), used by packwiz-export. Deliberately
+# kept outside pack/ - anything in there is fair game for `packwiz modrinth export`
+# to sweep into the client .mrpack's overrides/.
 fetch-installer:
     #!/usr/bin/env bash
     set -euo pipefail
-    [ -f pack/packwiz-installer-bootstrap.jar ] && exit 0
-    curl -fsSL -o pack/packwiz-installer-bootstrap.jar "{{installer_bootstrap_url}}"
+    [ -f packwiz-installer-bootstrap.jar ] && exit 0
+    curl -fsSL -o packwiz-installer-bootstrap.jar "{{installer_bootstrap_url}}"
 
-# materialize the packwiz pack into build/server and build/client, then zip both
+# materialize the server side into build/server + zip it (for `just deploy`), and
+# export the client side as a proper .mrpack (for Prism/other launchers to import -
+# a plain folder-of-jars zip isn't a "recognized modpack type" to any launcher)
 packwiz-export: fetch-installer
     #!/usr/bin/env bash
     set -euo pipefail
+    rm -rf build
+    mkdir -p build/server
     cd pack
     packwiz serve &
     SERVE_PID=$!
     trap 'kill "$SERVE_PID" 2>/dev/null || true' EXIT
     sleep 1
-    rm -rf ../build
-    mkdir -p ../build/server ../build/client
-    (cd ../build/server && java -jar ../../pack/packwiz-installer-bootstrap.jar -g -s server http://localhost:8080/pack.toml)
-    (cd ../build/client && java -jar ../../pack/packwiz-installer-bootstrap.jar -g -s client http://localhost:8080/pack.toml)
+    (cd ../build/server && java -jar ../../packwiz-installer-bootstrap.jar -g -s server http://localhost:8080/pack.toml)
+    kill "$SERVE_PID" 2>/dev/null || true
+    packwiz modrinth export -y -o "../build/drakonixtechpack-{{pack_version}}-client.mrpack"
     cd ../build
-    rm -f drakonixtechpack-server.zip drakonixtechpack-client.zip
-    (cd server && zip -qr ../drakonixtechpack-server.zip .)
-    (cd client && zip -qr ../drakonixtechpack-client.zip .)
+    (cd server && zip -qr "../drakonixtechpack-{{pack_version}}-server.zip" .)
 
 # deploy a server bundle (build/server, from packwiz-export) to /srv/minecraft/drakonixtechpack
 deploy src="build/server": packwiz-export
@@ -126,7 +130,7 @@ tag version:
 # (fallback to the CI workflow - needs `gh` authenticated)
 release: packwiz-export
     gh release create "$(git describe --tags --abbrev=0)" \
-        build/drakonixtechpack-server.zip build/drakonixtechpack-client.zip \
+        build/drakonixtechpack-{{pack_version}}-server.zip build/drakonixtechpack-{{pack_version}}-client.mrpack \
         --generate-notes
 
 # serve pack.toml locally for a real Prism Launcher singleplayer test.
