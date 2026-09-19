@@ -1,1 +1,0 @@
-- if possible, add justfile target to launch pack in single player mode so i can test it

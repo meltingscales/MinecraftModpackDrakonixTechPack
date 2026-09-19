@@ -77,6 +77,19 @@ To add/remove a mod: `packwiz modrinth add <slug>` / `packwiz curseforge add <sl
 `packwiz remove <slug>` from inside `pack/`, then `just packwiz-export` regenerates
 the zips.
 
+## Testing in singleplayer
+
+```
+just test-client
+```
+
+Serves `pack/pack.toml` on `http://localhost:8080` (via `packwiz serve`). One-time
+setup in [Prism Launcher](https://prismlauncher.org/): Add Instance → Import →
+paste `http://localhost:8080/pack.toml` → confirm. From then on, Play launches a
+real singleplayer session under your own Mojang account; re-run `just test-client`
+and hit "Update" on the instance to pick up mod-list changes. `Ctrl+C` stops the
+server once Prism's done downloading.
+
 ## Releasing
 
 ```
@@ -90,8 +103,9 @@ as a fallback if CI is down.
 
 ## layout
 
-- `justfile` — `packwiz-export`, `tag`, `release`, `setup-user`, `deploy`, `enable/
-  start/stop/restart/status/logs/rcon/ping/list-backups/restore-world/delete-chunk`
+- `justfile` — `packwiz-export`, `tag`, `release`, `test-client`, `setup-user`,
+  `deploy`, `enable/start/stop/restart/status/logs/rcon/ping/list-backups/
+  restore-world/delete-chunk`
 - `.github/workflows/release.yml` — builds + publishes the release zips on `vX.Y.Z`
   tag push
 - `pack/` — the packwiz pack: `pack.toml`, `index.toml`, `mods/*.pw.toml` (source of

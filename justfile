@@ -128,3 +128,10 @@ release: packwiz-export
     gh release create "$(git describe --tags --abbrev=0)" \
         build/drakonixtechpack-server.zip build/drakonixtechpack-client.zip \
         --generate-notes
+
+# serve pack.toml locally for a real Prism Launcher singleplayer test.
+# One-time: in Prism, Add Instance -> Import -> http://localhost:8080/pack.toml,
+# confirm, then Play (real Mojang account, real singleplayer). Re-run this and
+# hit "Update" on that instance later to pull mod-list changes. Ctrl+C when done.
+test-client:
+    cd pack && packwiz serve
