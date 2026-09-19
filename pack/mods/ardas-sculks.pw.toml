@@ -1,0 +1,13 @@
+name = "Arda's Sculks (Ancient City Portal / Deep Dark Dimension)"
+filename = "Arda's Sculks 1.4.3.5_1 [NEOFORGE] [1.21.1].jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/LfM2UVYA/versions/G91RCfpN/Arda%27s%20Sculks%201.4.3.5_1%20%5BNEOFORGE%5D%20%5B1.21.1%5D.jar"
+hash-format = "sha512"
+hash = "fb5145514137b922fe02f26d95e3396f82b3a57b45e48f1fc7c7b00489da0ef85d3ed376bec42096060f9872d7a9eeadb4b349cc64ad6504d87b644f601d775f"
+
+[update]
+[update.modrinth]
+mod-id = "LfM2UVYA"
+version = "G91RCfpN"

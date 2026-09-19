@@ -31,6 +31,11 @@ hash = "657a01a86bbf8617e4726c77df08f708e43a3db12db74b837eebd8eb1d93faae"
 metafile = true
 
 [[files]]
+file = "mods/ardas-sculks.pw.toml"
+hash = "b5cd1dce18b14832f6301ba92ea7ee9e845c360d454e0e8182a0024a1972ceb5"
+metafile = true
+
+[[files]]
 file = "mods/artifacts.pw.toml"
 hash = "416b7f130791397fb2ceb9e89ce3fd0e870f207c8e40b759c069cb58b7544314"
 metafile = true
@@ -81,6 +86,11 @@ hash = "6585dd3b5e5827ef7a154c6f6a42b261fce089bfffe430c13e8c7df2e22f9c0f"
 metafile = true
 
 [[files]]
+file = "mods/create-dimension,-steamworks-realm.pw.toml"
+hash = "c951e8401520a6d0f02d934bcbe31853144204cd6f28a025ebe760af1dd97e2a"
+metafile = true
+
+[[files]]
 file = "mods/create-estrogen.pw.toml"
 hash = "2e6b4b91ba3df20af4e4ff370a1ee2cd97211b066cd09c2c9f801ec96d592b63"
 metafile = true
@@ -128,6 +138,11 @@ metafile = true
 [[files]]
 file = "mods/deeperdarker.pw.toml"
 hash = "a9ecc4476d26e707189e9f988c19f22961c33dfd5e5b4db1dfd6f87c6a81c545"
+metafile = true
+
+[[files]]
+file = "mods/dimensionaldoors.pw.toml"
+hash = "f97c3a8f1346a9d4ffc36e7223b03b4abf0f657319145b9517d944184ae4839b"
 metafile = true
 
 [[files]]
@@ -321,8 +336,18 @@ hash = "9088f93a00bc3242f0239a7115bdcbc4480e19c6120f5396fb3af27d77abda3e"
 metafile = true
 
 [[files]]
+file = "mods/the-undergarden.pw.toml"
+hash = "cf08653612ce37b29ebabf07c5dfce80c493927d4cb7760d68a361738fb54d1d"
+metafile = true
+
+[[files]]
 file = "mods/toms-storage.pw.toml"
 hash = "a303683e4c74640f419c31db329e9afc3ee8f388abc5c6a536dc6169c274b5c6"
+metafile = true
+
+[[files]]
+file = "mods/tropicraft.pw.toml"
+hash = "a9cca269c7d66cbe6d458c127c49abb368dce191d00e4ddca90d043e092cf4ff"
 metafile = true
 
 [[files]]

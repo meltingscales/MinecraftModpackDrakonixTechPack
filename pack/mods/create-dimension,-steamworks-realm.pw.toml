@@ -1,0 +1,13 @@
+name = "Create: Dimension, Steamworks Realm"
+filename = "create_dimension-neoforge-1.21.1-2.0.0+neoforge-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/yHADpDIL/versions/2UuXBVSU/create_dimension-neoforge-1.21.1-2.0.0%2Bneoforge-1.21.1.jar"
+hash-format = "sha512"
+hash = "410f95187e7a2c83c8bf42f4c174bf989bc2d3c3061895e7000b8861b4e896f076ebacd11c26689339af1a692b804653dab9f5bb3242702499b95379efb86cd3"
+
+[update]
+[update.modrinth]
+mod-id = "yHADpDIL"
+version = "2UuXBVSU"
