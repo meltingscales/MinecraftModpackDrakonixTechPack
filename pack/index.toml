@@ -256,6 +256,11 @@ hash = "35779b39ddc06059ec483b33de2ecfdc3adb95c0a49e69b6701fb0024827e2f5"
 metafile = true
 
 [[files]]
+file = "mods/genesis-world-previewer-pregenerator.pw.toml"
+hash = "d5b34d13e31865c265130edc6da12744233dc96181fdcec0cd27cf97be2b06cc"
+metafile = true
+
+[[files]]
 file = "mods/glitchcore.pw.toml"
 hash = "e53646f88aeb6bd54c38db50da972abdac91e83c145a8f974107b0ca103b15bc"
 metafile = true
