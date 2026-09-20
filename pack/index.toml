@@ -81,6 +81,11 @@ hash = "2acaff560bbda5741538528a2967355ec86a8f7564adba0b2316989c66892374"
 metafile = true
 
 [[files]]
+file = "mods/collapsible-groups.pw.toml"
+hash = "288b5d7f7165b2e3db7826ee723c4cc77be7eb3a642c6490bf1d6ce2876bbf7b"
+metafile = true
+
+[[files]]
 file = "mods/common-storage-lib.pw.toml"
 hash = "973d189eb0bb8a514bebc50e78bdbcc5f9e7b3d4869b3a9718ca63ca3afff215"
 metafile = true
