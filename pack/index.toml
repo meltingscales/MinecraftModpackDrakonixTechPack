@@ -206,6 +206,11 @@ hash = "f97c3a8f1346a9d4ffc36e7223b03b4abf0f657319145b9517d944184ae4839b"
 metafile = true
 
 [[files]]
+file = "mods/doggy-talents-next.pw.toml"
+hash = "4dc4b35767b1869c41addaa0cd8f26d8ec55d01e75efd3a2a01dd43420cc7f45"
+metafile = true
+
+[[files]]
 file = "mods/epic-fight.pw.toml"
 hash = "8f25f6d5023d533e0d70b0375c36c176445251f431a9c8ebd63cf7f63e4c31da"
 metafile = true
@@ -301,6 +306,11 @@ hash = "48b420341eda93d5a189d8e2e618839fb7f1bdbaee936325716341db7880197f"
 metafile = true
 
 [[files]]
+file = "mods/inventory-profiles-next.pw.toml"
+hash = "ab503e89461dff879ee793253e173625b6ab868f570a371323ef725e567cf5ea"
+metafile = true
+
+[[files]]
 file = "mods/inventoryhudplus.pw.toml"
 hash = "19997fc3233640cda64d2fbe3eb0c01c51910101cc67ad078fa1c9d9c7374703"
 metafile = true
@@ -338,6 +348,11 @@ metafile = true
 [[files]]
 file = "mods/l_enders-cataclysm.pw.toml"
 hash = "0a509504c937a398ccabc71d56029690d43806378c7121928776407083c669ef"
+metafile = true
+
+[[files]]
+file = "mods/libipn.pw.toml"
+hash = "0d2a00252d64ed7d2d9b19994f7accb780304be61f3903d36e810714b414c6cb"
 metafile = true
 
 [[files]]
@@ -543,6 +558,11 @@ metafile = true
 [[files]]
 file = "mods/veinminer.pw.toml"
 hash = "03a9564d7cdb16578f46c6f58dcc261968bb440c243ad90229d8ce58aaccc0d3"
+metafile = true
+
+[[files]]
+file = "mods/waystones-teleport-pets.pw.toml"
+hash = "2966bd8471246286be3d42515c7e89ca07ba7afd606f00ef6ffdc9a6ce150a1c"
 metafile = true
 
 [[files]]
