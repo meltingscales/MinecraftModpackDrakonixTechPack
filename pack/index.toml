@@ -524,6 +524,11 @@ hash = "46831c04077a06df823bcd0f254833a90a9a9ccc78f5069f4b4c27fa301ac0cf"
 metafile = true
 
 [[files]]
+file = "mods/petprotect.pw.toml"
+hash = "09a0d9dbcec314df123a10cd560d70126365c0f15c9316376035f7f773aa7703"
+metafile = true
+
+[[files]]
 file = "mods/porting-dead-libs.pw.toml"
 hash = "d61c90584238aa0cbe411c8e532b6efc7f3b335f172bcd6e7fbae604d61fdf0e"
 metafile = true

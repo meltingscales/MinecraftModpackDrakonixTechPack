@@ -1,0 +1,13 @@
+name = "PetProtect"
+filename = "petprotect-neoforge-1.21.1-2.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/LeqaEyxB/versions/EjWilMbx/petprotect-neoforge-1.21.1-2.0.0.jar"
+hash-format = "sha512"
+hash = "7874f9f2076dfe55f2f236baecb5fa0fd9e6871e8ca7109ee56029adb87cc7e1b59f84a3fcb3d3ce181256249d57c9a0253ad9e54f2aefc6b46b38449f779ae1"
+
+[update]
+[update.modrinth]
+mod-id = "LeqaEyxB"
+version = "EjWilMbx"
