@@ -57,7 +57,7 @@ deploy src="build/server": packwiz-export
         --exclude=/banned-players.json --exclude=/banned-ips.json \
         --exclude=/usercache.json --exclude=/usernamecache.json \
         "{{src}}/" "{{server_dir}}/"
-    [ -f "{{server_dir}}/server.properties" ] || sudo cp "{{src}}/server.properties" "{{server_dir}}/server.properties"
+    sudo test -f "{{server_dir}}/server.properties" || sudo cp "{{src}}/server.properties" "{{server_dir}}/server.properties"
     sudo chown -R minecraft:minecraft "{{server_dir}}"
     sudo chmod +x "{{server_dir}}/run.sh"
     printf -- '-Xmx12G\n-Xms12G\n' | sudo tee "{{server_dir}}/user_jvm_args.txt" >/dev/null
