@@ -41,11 +41,23 @@ packwiz-export: fetch-installer fetch-neoforge-installer
     bash scripts/packwiz-export.sh {{pack_version}} {{neoforge_version}}
 
 # deploy a server bundle (build/server, from packwiz-export) to /srv/minecraft/drakonixtechpack.
+# --delete only mirrors the mod/config side of things - world/, logs, and
+# other server-generated or operator-edited runtime state are excluded so a
+# routine redeploy (to pick up a mod-list change) can't wipe the world or
+# clobber RCON settings you added to the live server.properties by hand.
 # Writes eula.txt=true - only run this if you (the operator) have accepted
 # https://www.minecraft.net/eula. Written after the rsync so `--delete` on a
 # future deploy can't wipe it and leave the server unable to start.
 deploy src="build/server": packwiz-export
-    sudo rsync -a --delete "{{src}}/" "{{server_dir}}/"
+    sudo rsync -a --delete \
+        --exclude=/world --exclude=/world_nether --exclude=/world_the_end \
+        --exclude=/logs --exclude=/crash-reports \
+        --exclude=/server.properties --exclude=/eula.txt \
+        --exclude=/whitelist.json --exclude=/ops.json \
+        --exclude=/banned-players.json --exclude=/banned-ips.json \
+        --exclude=/usercache.json --exclude=/usernamecache.json \
+        "{{src}}/" "{{server_dir}}/"
+    [ -f "{{server_dir}}/server.properties" ] || sudo cp "{{src}}/server.properties" "{{server_dir}}/server.properties"
     sudo chown -R minecraft:minecraft "{{server_dir}}"
     sudo chmod +x "{{server_dir}}/run.sh"
     printf -- '-Xmx12G\n-Xms12G\n' | sudo tee "{{server_dir}}/user_jvm_args.txt" >/dev/null

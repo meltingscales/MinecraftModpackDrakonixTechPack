@@ -40,8 +40,16 @@ just setup-backups                  # install + enable the daily backup timer (k
 [Mojang's EULA](https://www.minecraft.net/eula) yourself, since that's the operator's
 agreement to make, not something to accept silently.
 
-`pack/server.properties` (tracked in the pack, so it ships pre-set — no manual edit
-needed) pins the port:
+**Redeploying is safe** — `just deploy` rebuilds `build/server` from scratch every
+time (via `packwiz-export`), which never contains `world/`, logs, or other runtime
+state, only mods/configs. The rsync excludes `world/`, `server.properties`,
+`whitelist.json`, ban/op/user-cache lists, `logs/`, and `crash-reports/` from
+`--delete`'s scope, so picking up a mod-list change (`just deploy` again, any time)
+doesn't wipe the world or clobber RCON settings you've hand-added to the live
+`server.properties`.
+
+`pack/server.properties` (tracked in the pack, so it ships pre-set on the very first
+deploy — copied only if the live one doesn't already exist) pins the port:
 
 ```
 server-port=25567
