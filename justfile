@@ -6,6 +6,7 @@ rcon_port := "25577"
 game_port := "25567"
 installer_bootstrap_url := "https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar"
 pack_version := `grep '^version' pack/pack.toml | sed -E 's/version = "(.*)"/\1/'`
+neoforge_version := `grep '^neoforge' pack/pack.toml | sed -E 's/neoforge = "(.*)"/\1/'`
 
 default:
     @just --list
@@ -23,24 +24,21 @@ fetch-installer:
     [ -f packwiz-installer-bootstrap.jar ] && exit 0
     curl -fsSL -o packwiz-installer-bootstrap.jar "{{installer_bootstrap_url}}"
 
-# materialize the server side into build/server + zip it (for `just deploy`), and
-# export the client side as a proper .mrpack (for Prism/other launchers to import -
-# a plain folder-of-jars zip isn't a "recognized modpack type" to any launcher)
-packwiz-export: fetch-installer
+# fetch the NeoForge server installer for the pack's pinned version (once per version -
+# filename is version-specific so a pack.toml bump re-fetches automatically)
+fetch-neoforge-installer:
     #!/usr/bin/env bash
     set -euo pipefail
-    rm -rf build
-    mkdir -p build/server
-    cd pack
-    packwiz serve &
-    SERVE_PID=$!
-    trap 'kill "$SERVE_PID" 2>/dev/null || true' EXIT
-    sleep 1
-    (cd ../build/server && java -jar ../../packwiz-installer-bootstrap.jar -g -s server http://localhost:8080/pack.toml)
-    kill "$SERVE_PID" 2>/dev/null || true
-    packwiz modrinth export -y -o "../build/drakonixtechpack-{{pack_version}}-client.mrpack"
-    cd ../build
-    (cd server && zip -qr "../drakonixtechpack-{{pack_version}}-server.zip" .)
+    [ -f "neoforge-{{neoforge_version}}-installer.jar" ] && exit 0
+    curl -fsSL -o "neoforge-{{neoforge_version}}-installer.jar" \
+        "https://maven.neoforged.net/releases/net/neoforged/neoforge/{{neoforge_version}}/neoforge-{{neoforge_version}}-installer.jar"
+
+# materialize the server side into build/server (real NeoForge server install + mods)
+# + zip it (for `just deploy`), and export the client side as a proper .mrpack (for
+# Prism/other launchers to import - a plain folder-of-jars zip isn't a "recognized
+# modpack type" to any launcher)
+packwiz-export: fetch-installer fetch-neoforge-installer
+    bash scripts/packwiz-export.sh {{pack_version}} {{neoforge_version}}
 
 # deploy a server bundle (build/server, from packwiz-export) to /srv/minecraft/drakonixtechpack
 deploy src="build/server": packwiz-export
