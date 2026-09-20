@@ -78,9 +78,10 @@ a substitute instead of the real thing. Two other originally-wanted mods also la
 | Modular Powersuits | dead upstream, capped at 1.20.1 | **Power Armor: Renostalgized** (modular armor via an Armor Modification Table — closest available analog) |
 | Thermal Expansion / Thermal Series | CoFH mods capped at 1.20.1 | **Immersive Engineering** (retro-futuristic industrial tech, actively maintained) |
 | Backpacked | capped at 1.20.6, no 1.21.1 build | **Sophisticated Backpacks** |
+| ProjectE | ports, but PE1.1.0 has an unfixed upstream crash on 1.21.1 - `IEMCProxy` fails to init on the first item tooltip render, then every tooltip after crashes the client (permanent, since Java caches the failed static init); see [ProjectE#2460](https://github.com/sinkillerj/ProjectE/issues/2460), no response/fix as of writing | **Replication** (+ **Replication AE2 Bridge**, since AE2 is already in the pack) - the other EMC-alike from the original wishlist, unaffected by ProjectE's bug |
 
 Everything else in the original wishlist ported natively: Applied Energistics 2,
-Mekanism, Create (+ Create Big Cannons), The Aether, The Twilight Forest, ProjectE,
+Mekanism, Create (+ Create Big Cannons), The Aether, The Twilight Forest,
 Waystones, Corail Tombstone (gravestone mod), JEI, Iris (native NeoForge shaders, no
 Oculus needed). Several dimension mods were added to answer the "not sure what
 other cool dimensions mods" TODO — see [Dimensions](#dimensions) below for the full

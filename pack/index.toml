@@ -534,11 +534,6 @@ hash = "a6887bba05e48482744dfe3e679d19c53572f7b1d850cc6d801f0757188b8e82"
 metafile = true
 
 [[files]]
-file = "mods/projecte.pw.toml"
-hash = "bdca798ffe4124bf43ea13f1fa5f0593a7539762240edb56c47b1976b413ebc4"
-metafile = true
-
-[[files]]
 file = "mods/puzzles-lib.pw.toml"
 hash = "391e5d415c0754ad210b8efa54fc9ded4f99e6ab8562d6faf960f3b65d84a66a"
 metafile = true
@@ -546,6 +541,16 @@ metafile = true
 [[files]]
 file = "mods/refined-storage.pw.toml"
 hash = "aaf0d7287d0b48ed96307ffa1fd8bbe7a3d6bfc837be1e6ba42c09063b988e69"
+metafile = true
+
+[[files]]
+file = "mods/replication-ae2-bridge.pw.toml"
+hash = "cb60641b91b6e702bdbe96d600ba4607295c0df4121d4bd5ae5f84098d81b82d"
+metafile = true
+
+[[files]]
+file = "mods/replication.pw.toml"
+hash = "958afff17e942f3491abfcf49702dd146505a02e1055b4fdfde01962ca61706e"
 metafile = true
 
 [[files]]
@@ -611,6 +616,11 @@ metafile = true
 [[files]]
 file = "mods/the-undergarden.pw.toml"
 hash = "cf08653612ce37b29ebabf07c5dfce80c493927d4cb7760d68a361738fb54d1d"
+metafile = true
+
+[[files]]
+file = "mods/titanium.pw.toml"
+hash = "e697bd3a78edee29ae0bdfbf3cd4261dcbe4517ffb5ef84851e4cc0abcbda7e1"
 metafile = true
 
 [[files]]
