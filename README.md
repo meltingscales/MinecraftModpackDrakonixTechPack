@@ -131,6 +131,15 @@ as a fallback if CI is down.
   tag push
 - `pack/` — the packwiz pack: `pack.toml`, `index.toml`, `mods/*.pw.toml` (source of
   truth for the mod list — no separate sha256 manifest, packwiz hashes its own files)
+- `pack/options.txt`, `pack/config/` — client default-config overrides (packwiz treats
+  any non-metadata file placed in `pack/` as a plain file to install at that path, no
+  `packwiz` subcommand needed - just drop it in and `packwiz refresh`). Currently:
+  `options.txt` (just the `resourcePacks`/`incompatibleResourcePacks` lines - not a
+  full options.txt, so it doesn't clobber anyone's keybinds/video settings on
+  update) to pre-select Whimscape, `config/iris.properties` to pre-select
+  Complementary Shaders, and `config/xaero/` + `config/xaerohud.txt` for Xaero's
+  minimap/world map default layout (global mod settings only - per-world waypoint
+  data lives outside `config/` and is never bundled)
 - `systemd/minecraftserver-drakonixtechpack.service` — unit installed to
   `/etc/systemd/system/`, runs as the `minecraft` user, pins Java 21 (NeoForge 1.21.1
   requirement)

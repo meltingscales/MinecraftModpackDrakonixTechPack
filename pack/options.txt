@@ -1,0 +1,2 @@
+resourcePacks:["vanilla","generated/fragmentum_layer","mod_resources","moonlight:merged_pack","file/Whimscape_1.20.2-1.21.11_r6.zip"]
+incompatibleResourcePacks:[]
