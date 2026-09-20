@@ -7,6 +7,10 @@ Modded Minecraft server: **NeoForge 1.21.1**. Hosting setup is a clone of the si
 the mod bundle sourced from a tracked [Packwiz](https://packwiz.infra.link/) pack
 instead of a hand-dropped CurseForge zip.
 
+## Server URL
+
+- drakonixtechpack.playit.plus:23387
+
 ## What is this
 
 A tech-focused modpack + self-hosted server setup, in one repo:
