@@ -23,17 +23,21 @@ A tech-focused modpack + self-hosted server setup, in one repo:
 ## Quickstart
 
 ```
-just packwiz-export                 # builds build/{server,client} + zips from pack/
+just packwiz-export                 # installs the real NeoForge server + mods into build/server, zips it, exports build/*.mrpack
 just setup-user                     # creates the minecraft system user + /srv/minecraft
-just deploy                         # rsyncs build/server -> /srv/minecraft/drakonixtechpack, installs the unit
+just deploy                         # rsyncs build/server -> /srv/minecraft/drakonixtechpack, writes eula.txt=true, installs the unit
 just enable                         # systemctl enable minecraftserver-drakonixtechpack
 just start                          # systemctl start minecraftserver-drakonixtechpack
 just status                         # confirm it's running
 just setup-backups                  # install + enable the daily backup timer (keeps last 10)
 ```
 
-Before the first `just deploy`, edit `build/server/server.properties` (regenerated
-each `packwiz-export`, so re-check after re-exporting) and set:
+`just deploy` writes `eula.txt=true` on your behalf — only run it once you've accepted
+[Mojang's EULA](https://www.minecraft.net/eula) yourself, since that's the operator's
+agreement to make, not something to accept silently.
+
+`pack/server.properties` (tracked in the pack, so it ships pre-set — no manual edit
+needed) pins the port:
 
 ```
 server-port=25567
@@ -43,6 +47,19 @@ query.port=25567
 (offset from the defaults so this can coexist with other Minecraft servers already
 running on this host — `buiz` uses 25565/25575, `liminalindustries` uses
 25566/25576).
+
+RCON isn't pre-configured (no secret gets committed to the repo). After the first
+`just deploy` + `just start`, edit the live `/srv/minecraft/drakonixtechpack/
+server.properties` and add:
+
+```
+enable-rcon=true
+rcon.port=25577
+rcon.password=<a-generated-secret>
+```
+
+then `just restart` to pick it up — RCON settings are only read at startup. `just rcon`
+connects with `scripts/rcon.py`, prompting for the password interactively.
 
 ## Version / mod list decisions
 

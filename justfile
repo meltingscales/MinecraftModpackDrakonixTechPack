@@ -40,13 +40,17 @@ fetch-neoforge-installer:
 packwiz-export: fetch-installer fetch-neoforge-installer
     bash scripts/packwiz-export.sh {{pack_version}} {{neoforge_version}}
 
-# deploy a server bundle (build/server, from packwiz-export) to /srv/minecraft/drakonixtechpack
+# deploy a server bundle (build/server, from packwiz-export) to /srv/minecraft/drakonixtechpack.
+# Writes eula.txt=true - only run this if you (the operator) have accepted
+# https://www.minecraft.net/eula. Written after the rsync so `--delete` on a
+# future deploy can't wipe it and leave the server unable to start.
 deploy src="build/server": packwiz-export
     sudo rsync -a --delete "{{src}}/" "{{server_dir}}/"
     sudo chown -R minecraft:minecraft "{{server_dir}}"
     sudo chmod +x "{{server_dir}}/run.sh"
-    printf -- '-Xmx6G\n-Xms6G\n' | sudo tee "{{server_dir}}/user_jvm_args.txt" >/dev/null
-    sudo chown minecraft:minecraft "{{server_dir}}/user_jvm_args.txt"
+    printf -- '-Xmx12G\n-Xms12G\n' | sudo tee "{{server_dir}}/user_jvm_args.txt" >/dev/null
+    printf 'eula=true\n' | sudo tee "{{server_dir}}/eula.txt" >/dev/null
+    sudo chown minecraft:minecraft "{{server_dir}}/user_jvm_args.txt" "{{server_dir}}/eula.txt"
     sudo install -m 644 "{{unit}}" /etc/systemd/system/{{service}}.service
     sudo systemctl daemon-reload
 
