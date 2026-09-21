@@ -153,3 +153,10 @@ release: packwiz-export
 # hit "Update" on that instance later to pull mod-list changes. Ctrl+C when done.
 test-client:
     cd pack && packwiz serve
+
+# copy Xaero minimap/worldmap waypoints from an older drakonixtechpack Prism
+# instance into a newer one (each version import lands in a differently-named
+# instance dir, so waypoints don't carry over automatically). With no args,
+# auto-detects the two most recent drakonixtechpack-*-client instances.
+copy-waypoints old="" new="":
+    bash scripts/copy-waypoints.sh {{old}} {{new}}
