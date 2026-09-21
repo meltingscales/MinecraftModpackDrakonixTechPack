@@ -1,0 +1,13 @@
+name = "Replication RS2 Bridge"
+filename = "replication_rs2_bridge-1.21.1-NeoForge-1.2.7.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "2970bf52d8d2c73d6ef0caa5c0bf8a21b33b9e6a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8922060
+project-id = 1381503

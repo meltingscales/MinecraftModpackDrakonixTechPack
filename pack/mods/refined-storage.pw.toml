@@ -3,11 +3,11 @@ filename = "refinedstorage-neoforge-2.0.9.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/KDvYkUg3/versions/lHHiI26k/refinedstorage-neoforge-2.0.9.jar"
-hash-format = "sha512"
-hash = "b98a938b8af859f1952bfb35fb6db712835a7dead88fa15258ac0f4f06b26b08ebfa49fd9a35b2c81f7a745b3cd4370ced98c242d0fe7473ba019d92da8f6c57"
+hash-format = "sha1"
+hash = "bf05b983968e75b5466a270c68d1fdc7ba2a5e77"
+mode = "metadata:curseforge"
 
 [update]
-[update.modrinth]
-mod-id = "KDvYkUg3"
-version = "lHHiI26k"
+[update.curseforge]
+file-id = 8211701
+project-id = 243076

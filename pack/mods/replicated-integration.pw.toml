@@ -1,0 +1,13 @@
+name = "Replicated Integration"
+filename = "replicated_integration-1.21.1-neo-v0.2.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "7b085c75751844c9cbc23537010108b3e7f54ca0"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8132969
+project-id = 1539319
