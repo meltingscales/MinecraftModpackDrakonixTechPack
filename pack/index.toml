@@ -144,6 +144,11 @@ hash = "24c6c3fe917ffbcef04e788dec3e003d0ed03433bc00f9cf4f23fe9b85636aa7"
 metafile = true
 
 [[files]]
+file = "mods/chunk-loaders.pw.toml"
+hash = "55bca8c3d631e8c7801081d6d2b00c23cb59a3c17bc7c6b03032aef421ab2c6c"
+metafile = true
+
+[[files]]
 file = "mods/clumps.pw.toml"
 hash = "2acaff560bbda5741538528a2967355ec86a8f7564adba0b2316989c66892374"
 metafile = true
@@ -276,6 +281,11 @@ metafile = true
 [[files]]
 file = "mods/doggy-talents-next.pw.toml"
 hash = "4dc4b35767b1869c41addaa0cd8f26d8ec55d01e75efd3a2a01dd43420cc7f45"
+metafile = true
+
+[[files]]
+file = "mods/enderchests.pw.toml"
+hash = "823f7e038ff7a8a4f84a9b43c5955ba3cbd7e14e4f4b0681e28703919b6b05ca"
 metafile = true
 
 [[files]]
@@ -604,6 +614,11 @@ hash = "bcaac076ac981463ee57b7469430e5fb7ff99f8e2387681e7ac737ca5d22596b"
 metafile = true
 
 [[files]]
+file = "mods/shetiphiancore.pw.toml"
+hash = "51c7fbbf6e1d09a29ad010ae0a9f11e966030b013e6d543965e74b7f5f78b339"
+metafile = true
+
+[[files]]
 file = "mods/sodium.pw.toml"
 hash = "2a001cdb3d5ac4970d422914083c27380eba8ebd40dfd435754fe6566ba78beb"
 metafile = true
@@ -621,6 +636,16 @@ metafile = true
 [[files]]
 file = "mods/spartan-weaponry-unofficial.pw.toml"
 hash = "e84f15cb193b7d47bc6d755f0ddb353cc2e536f6ed19a577a244ccf4a0409305"
+metafile = true
+
+[[files]]
+file = "mods/supermartijn642s-config-lib.pw.toml"
+hash = "62bd7012826fdcccf17a089055be67f87fb7335c88e73efc52bc9e51a1bf3188"
+metafile = true
+
+[[files]]
+file = "mods/supermartijn642s-core-lib.pw.toml"
+hash = "51c911d05e42b074fea01a74cb05050fa15164eed8a5d137cf0f64ecc16ed861"
 metafile = true
 
 [[files]]
