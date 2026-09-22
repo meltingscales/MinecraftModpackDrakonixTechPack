@@ -124,6 +124,11 @@ hash = "7dba9a4a9894a6bbab3a8c7edcc718499297412247fc0e8ccebf75b760c85140"
 metafile = true
 
 [[files]]
+file = "mods/cb-multipart.pw.toml"
+hash = "c09e2c7df60d3d247a443a8b788d1fc55278246e3e1e151b5a27e31b01ee0dbc"
+metafile = true
+
+[[files]]
 file = "mods/cc-tweaked.pw.toml"
 hash = "e42363c32c9b6323eea977283c928cec373bfc415534ec92e9c3367ee8c54256"
 metafile = true
@@ -154,8 +159,18 @@ hash = "2acaff560bbda5741538528a2967355ec86a8f7564adba0b2316989c66892374"
 metafile = true
 
 [[files]]
+file = "mods/codechicken-lib.pw.toml"
+hash = "1e1678b169096708fcb92496f251260471221554f70ca0dab1b99f2a6b72ea7b"
+metafile = true
+
+[[files]]
 file = "mods/collapsible-groups.pw.toml"
 hash = "288b5d7f7165b2e3db7826ee723c4cc77be7eb3a642c6490bf1d6ce2876bbf7b"
+metafile = true
+
+[[files]]
+file = "mods/common-capabilities.pw.toml"
+hash = "2bd9170c8b9275f9e6861bec3a020f4200a388207720428ce5105cd062a1f01d"
 metafile = true
 
 [[files]]
@@ -266,6 +281,11 @@ metafile = true
 [[files]]
 file = "mods/curios.pw.toml"
 hash = "36debf7653e95a855b4fedacc19027cf2e01960fc0b6d55ef2ffbffbcb455690"
+metafile = true
+
+[[files]]
+file = "mods/cyclops-core.pw.toml"
+hash = "b1e68d816d95a0069f69df080920cd80bc58e95a16eb07de37ff841522bc71e2"
 metafile = true
 
 [[files]]
@@ -381,6 +401,11 @@ metafile = true
 [[files]]
 file = "mods/immersiveengineering.pw.toml"
 hash = "91875c996a9958aeea794843fb449915218625f52aaf0234ccd1faffa887e277"
+metafile = true
+
+[[files]]
+file = "mods/integrated-dynamics.pw.toml"
+hash = "5c38f02ac40e72085410923121aaa0929d036856281f2bce8cdb9113248db136"
 metafile = true
 
 [[files]]
@@ -561,6 +586,21 @@ metafile = true
 [[files]]
 file = "mods/power-armor-renostalgized.pw.toml"
 hash = "a6887bba05e48482744dfe3e679d19c53572f7b1d850cc6d801f0757188b8e82"
+metafile = true
+
+[[files]]
+file = "mods/project-red-core.pw.toml"
+hash = "1d7223f9d3839654c309a2b8aa5061917dbbff27ea87af961820393a1d68dd14"
+metafile = true
+
+[[files]]
+file = "mods/project-red-integration.pw.toml"
+hash = "76fc72a4c4587a4de3333054ad562717d67aace52fbc05391b76f295b2235578"
+metafile = true
+
+[[files]]
+file = "mods/project-red-transmission.pw.toml"
+hash = "9da154905408379e803be7895169e8f5813c4e7bec3a00fe3849d9c833b6899a"
 metafile = true
 
 [[files]]
