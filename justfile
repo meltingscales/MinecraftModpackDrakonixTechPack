@@ -127,6 +127,16 @@ logs:
 list-backups:
     ls -lht "{{backup_dir}}"
 
+# storage stats: current world size, backup dir total size + count, disk free space
+storage-stats:
+    @echo "world size ({{server_dir}}/world):"
+    du -sh "{{server_dir}}/world"
+    @echo "backups ({{backup_dir}}):"
+    du -sh "{{backup_dir}}"
+    @ls "{{backup_dir}}"/*.tar.gz 2>/dev/null | wc -l | xargs echo "  count:"
+    @echo "disk free:"
+    df -h "{{backup_dir}}"
+
 # bump pack.toml's version, commit, tag it, and push - the push triggers
 # .github/workflows/release.yml, which builds the zips and publishes a
 # GitHub Release from the tag.
