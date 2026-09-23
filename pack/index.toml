@@ -614,6 +614,11 @@ hash = "2c257ee5f2c8a3454e423610b61d113cf736c86b7b1f5079dc8e119346a0d7a0"
 metafile = true
 
 [[files]]
+file = "mods/relics-mod.pw.toml"
+hash = "5d2ebe2ac7d9436d1c5df0fbb2a1b975196d41a3090065b3c569aaac4fc11430"
+metafile = true
+
+[[files]]
 file = "mods/replicated-integration.pw.toml"
 hash = "054721644ad1f4dcf0ed99d8a14c3dbcee44055a290ef96a1f1d2b828827fab6"
 metafile = true
@@ -661,6 +666,11 @@ metafile = true
 [[files]]
 file = "mods/serene-seasons.pw.toml"
 hash = "bcaac076ac981463ee57b7469430e5fb7ff99f8e2387681e7ac737ca5d22596b"
+metafile = true
+
+[[files]]
+file = "mods/shatterbyte-lib.pw.toml"
+hash = "3f552bbdc42f07fd7d5695ced1d27d774af63cff5460be45817939e5f8e4f9de"
 metafile = true
 
 [[files]]
