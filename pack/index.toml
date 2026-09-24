@@ -184,6 +184,11 @@ hash = "65c8086d2ec3d39acc7bd36c7a0306ccc43b602b38fa07d13291bc478ef7dfff"
 metafile = true
 
 [[files]]
+file = "mods/cooking-for-blockheads.pw.toml"
+hash = "43e394e100190d49d216c0b646868ac134d3ae82f2361c3bd807ff1b1449c3e0"
+metafile = true
+
+[[files]]
 file = "mods/corail-tombstone.pw.toml"
 hash = "7b4e74ebfc923568149d8a27a90217788713f184af1333d2f93708dfbab83dfd"
 metafile = true
@@ -446,6 +451,11 @@ metafile = true
 [[files]]
 file = "mods/jei.pw.toml"
 hash = "58ed8e868a732911b326d45f10478dfd959b2717d720e1a60c8e1230f8bc1da2"
+metafile = true
+
+[[files]]
+file = "mods/just-enough-resources-jer.pw.toml"
+hash = "7905c08f37d8ebde50a5330a7dd10029de6259b0cb8adbde1170d93ea20218a7"
 metafile = true
 
 [[files]]
