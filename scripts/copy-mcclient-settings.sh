@@ -2,13 +2,23 @@
 # Each `just test-client` / Prism import of a new pack version lands in a
 # freshly named instance dir (drakonixtechpack-<version>-client), so your
 # personal client settings - Xaero waypoints, options.txt (keybinds, video,
-# resource pack selection), shader options, mod configs, server list - get
-# left behind in the old instance and Prism starts you fresh each time.
+# resource pack selection), shader options, mod configs, server list,
+# screenshots, saved hotbars, and any manually-added resourcepacks/
+# shaderpacks - get left behind in the old instance and Prism starts you
+# fresh each time.
 #
 # This carries them forward: OLD's settings win over NEW's (freshly-imported
-# pack defaults), so run it right after importing a new version, before you've
-# customized anything in it. It never touches mods/, world saves, logs/, or
-# resourcepacks/shaderpacks/ - those come from the pack itself.
+# pack defaults) for config/options-type files, so run it right after
+# importing a new version, before you've customized anything in it.
+# resourcepacks/ and shaderpacks/ are merged the other way (never overwrite
+# what's already in NEW) since the pack ships its own copies there
+# (Whimscape, Complementary Shaders) that should stay whatever version the
+# new pack pinned - only files you added yourself get carried over.
+#
+# It never touches mods/ or world saves (saves/) - those are pack content
+# and per-world data respectively, not client settings, and mod-list changes
+# between versions can make an old save incompatible in ways this script
+# has no business papering over.
 #
 # Usage: scripts/copy-mcclient-settings.sh [old-instance-name] [new-instance-name]
 # With no args, auto-detects the two most recent drakonixtechpack-*-client
@@ -56,10 +66,23 @@ mkdir -p "$NEW_MC"
 # Multiplayer server list, so your playit.gg entry etc. don't need re-adding.
 [ -f "$OLD_MC/servers.dat" ] && cp "$OLD_MC/servers.dat" "$NEW_MC/servers.dat"
 
+# Saved hotbar loadouts (creative-mode hotbar presets).
+[ -f "$OLD_MC/hotbar.nbt" ] && cp "$OLD_MC/hotbar.nbt" "$NEW_MC/hotbar.nbt"
+
 # All per-mod configs. Note: if a mod's config format changed between the
 # versions pinned in the two instances, that mod may need to regenerate its
 # config on next launch - most mods handle this gracefully, but it's worth
 # knowing if something looks reset after running this.
 [ -d "$OLD_MC/config" ] && rsync -a "$OLD_MC/config/" "$NEW_MC/config/"
+
+# Screenshots - no conflict risk (filenames are timestamped), straight merge.
+[ -d "$OLD_MC/screenshots" ] && rsync -a "$OLD_MC/screenshots/" "$NEW_MC/screenshots/"
+
+# Any resourcepacks/shaderpacks you added yourself beyond what the pack
+# ships. --ignore-existing so this never clobbers the pack's own current
+# Whimscape/Complementary Shaders files with an older carried-over copy.
+mkdir -p "$NEW_MC/resourcepacks" "$NEW_MC/shaderpacks"
+[ -d "$OLD_MC/resourcepacks" ] && rsync -a --ignore-existing "$OLD_MC/resourcepacks/" "$NEW_MC/resourcepacks/"
+[ -d "$OLD_MC/shaderpacks" ] && rsync -a --ignore-existing "$OLD_MC/shaderpacks/" "$NEW_MC/shaderpacks/"
 
 echo "Done."

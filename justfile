@@ -165,10 +165,11 @@ test-client:
     cd pack && packwiz serve
 
 # copy personal client settings (Xaero waypoints, options.txt, shader options,
-# mod configs, server list) from an older drakonixtechpack Prism instance into
-# a newer one (each version import lands in a differently-named instance dir,
-# so none of this carries over automatically). Run right after importing a new
-# version, before customizing it - old settings win over the fresh pack
+# mod configs, server list, screenshots, saved hotbars, manually-added
+# resourcepacks/shaderpacks) from an older drakonixtechpack Prism instance
+# into a newer one (each version import lands in a differently-named instance
+# dir, so none of this carries over automatically). Run right after importing
+# a new version, before customizing it - old settings win over the fresh pack
 # defaults. With no args, auto-detects the two most recent
 # drakonixtechpack-*-client instances.
 copy-mcclient-settings old="" new="":
