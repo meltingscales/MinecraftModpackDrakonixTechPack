@@ -1,13 +1,13 @@
 name = "MezzConfig"
-filename = "mezz_config-1.21.1-neoforge-0.5.11.jar"
+filename = "mezz_config-1.21.1-neoforge-0.6.5.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/7tEfOcA7/versions/Bg8bfSgj/mezz_config-1.21.1-neoforge-0.5.11.jar"
-hash-format = "sha512"
-hash = "cb62caa9d2c2e76eaf3400abc459e27180ed429d2421467b3d4de292ed1dfdf84a3b697118b5399bc2696cca5e94c4e76b968041928bdc6dbfe6b3fb5ac4829f"
+hash-format = "sha1"
+hash = "3c5c3b49508a7f409fe60e74f0336d6cf422bf49"
+mode = "metadata:curseforge"
 
 [update]
-[update.modrinth]
-mod-id = "7tEfOcA7"
-version = "Bg8bfSgj"
+[update.curseforge]
+file-id = 8987766
+project-id = 1689768
