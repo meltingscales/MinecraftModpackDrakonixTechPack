@@ -11,6 +11,22 @@ instead of a hand-dropped CurseForge zip.
 
 - drakonixtechpack.playit.plus:23387
 
+## Updating your client to a new release
+
+1. Grab the new client `.mrpack` from [Releases](https://github.com/meltingscales/MinecraftModpackDrakonixTechPack/releases) and import/update it in Prism
+   (Add Instance → Import, or hit "Update" on the existing instance).
+2. Carry your personal settings forward from the old instance (see
+   [Carrying over client settings on a version update](#carrying-over-client-settings-on-a-version-update)
+   below) — each version import lands in a separate instance dir, so waypoints,
+   configs, screenshots, etc. don't follow automatically:
+   ```
+   just copy-mcclient-settings
+   ```
+   Needs a clone of this repo and [`just`](https://github.com/casey/just#installation)
+   installed — Windows: `winget install --id Casey.Just --exact` (or scoop/choco, see
+   the link); Linux: see the link for your distro's package manager (`apt`, `pacman`,
+   `cargo install just`, etc).
+
 ## What is this
 
 A tech-focused modpack + self-hosted server setup, in one repo:
