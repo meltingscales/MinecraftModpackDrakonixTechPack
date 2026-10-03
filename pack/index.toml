@@ -329,6 +329,11 @@ hash = "4dc4b35767b1869c41addaa0cd8f26d8ec55d01e75efd3a2a01dd43420cc7f45"
 metafile = true
 
 [[files]]
+file = "mods/easier-sleeping.pw.toml"
+hash = "1cc36aa66a79331a43df56328cb1f87d72b98f4037ea59a3719f58eb20f194c4"
+metafile = true
+
+[[files]]
 file = "mods/enderchests.pw.toml"
 hash = "823f7e038ff7a8a4f84a9b43c5955ba3cbd7e14e4f4b0681e28703919b6b05ca"
 metafile = true
@@ -855,7 +860,7 @@ metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "62d655ff46514c79a3567f6653b3e176bb567bc36437243dca29508af66adb8a"
+hash = "287b8fd6e1b03839dfd95d65ec4fbc9bd96d338a02a10dda8446256769e5745d"
 
 [[files]]
 file = "resourcepacks/whimscape.pw.toml"

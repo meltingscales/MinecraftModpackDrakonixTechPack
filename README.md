@@ -140,6 +140,20 @@ real singleplayer session under your own Mojang account; re-run `just test-clien
 and hit "Update" on the instance to pick up mod-list changes. `Ctrl+C` stops the
 server once Prism's done downloading.
 
+## Carrying over client settings on a version update
+
+```
+just copy-mcclient-settings            # Linux/macOS, auto-detects old/new instance
+just copy-mcclient-settings old new    # or name them explicitly
+```
+
+On Windows this runs `scripts/copy-mcclient-settings.ps1` instead of the `.sh`
+script (same behavior - Xaero waypoints, `options.txt`, shader options, mod
+configs, server list, screenshots, saved hotbars, and any manually-added
+resourcepacks/shaderpacks). Run it right after importing a new pack version
+into Prism, before customizing anything - old settings win over the fresh
+pack defaults.
+
 ## Releasing
 
 ```
@@ -164,9 +178,11 @@ as a fallback if CI is down.
 - `pack/options.txt`, `pack/config/` — client default-config overrides (packwiz treats
   any non-metadata file placed in `pack/` as a plain file to install at that path, no
   `packwiz` subcommand needed - just drop it in and `packwiz refresh`). Currently:
-  `options.txt` (just the `resourcePacks`/`incompatibleResourcePacks` lines - not a
-  full options.txt, so it doesn't clobber anyone's keybinds/video settings on
-  update) to pre-select Whimscape, `config/iris.properties` to pre-select
+  `options.txt` (the `resourcePacks`/`incompatibleResourcePacks` lines, to pre-select
+  Whimscape, plus `key_*` keybind lines - pack-default keybinds, applied to every
+  player and overwriting their own binds on update if they'd changed them; no other
+  options.txt lines are shipped, so video/sound/etc. settings are left alone),
+  `config/iris.properties` to pre-select
   Complementary Shaders, and `config/xaero/` + `config/xaerohud.txt` for Xaero's
   minimap/world map default layout (global mod settings only - per-world waypoint
   data lives outside `config/` and is never bundled)

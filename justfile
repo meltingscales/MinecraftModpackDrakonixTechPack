@@ -172,5 +172,11 @@ test-client:
 # a new version, before customizing it - old settings win over the fresh pack
 # defaults. With no args, auto-detects the two most recent
 # drakonixtechpack-*-client instances.
+[linux]
+[macos]
 copy-mcclient-settings old="" new="":
     bash scripts/copy-mcclient-settings.sh {{old}} {{new}}
+
+[windows]
+copy-mcclient-settings old="" new="":
+    powershell -ExecutionPolicy Bypass -File scripts/copy-mcclient-settings.ps1 -Old "{{old}}" -New "{{new}}"
