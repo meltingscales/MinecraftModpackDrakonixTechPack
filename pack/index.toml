@@ -459,6 +459,11 @@ hash = "db1c1e6382878b78e994dba1b9026935f8d1c5ca685c89d2437858e0a0dcab58"
 metafile = true
 
 [[files]]
+file = "mods/iron-furnaces.pw.toml"
+hash = "cd73757a8c093f490d5c7673ad17f4404622a485234b79dc43efa0e67788d66e"
+metafile = true
+
+[[files]]
 file = "mods/item-highlighter.pw.toml"
 hash = "9163b758163681f75e2048c798be880c50392684b127d7d87f42ea588deceb62"
 metafile = true
@@ -656,6 +661,11 @@ metafile = true
 [[files]]
 file = "mods/relics-mod.pw.toml"
 hash = "5d2ebe2ac7d9436d1c5df0fbb2a1b975196d41a3090065b3c569aaac4fc11430"
+metafile = true
+
+[[files]]
+file = "mods/reliquary-reincarnations.pw.toml"
+hash = "ac806b9ce6a7754d9dd5ef53d8d81171fc6561af3a502c4d1fa5396c13be2686"
 metafile = true
 
 [[files]]
