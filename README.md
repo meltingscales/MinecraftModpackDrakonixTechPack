@@ -182,6 +182,22 @@ to a GitHub
 Release. `just release` does the same build+publish locally (needs `gh` authenticated)
 as a fallback if CI is down.
 
+## One-command update (operator)
+
+This box runs both the live server and the operator's own Prism client, so
+after a release:
+
+```
+./easy-update.sh
+```
+
+does `just deploy` + `just restart` + `just copy-mcclient-settings` in one
+shot (with a confirmation prompt first, since it disconnects any connected
+players). **Import the new client `.mrpack` into Prism as its own instance
+before running this** - the carry-settings step needs that new instance to
+copy into, and is a harmless no-op (prints an error, exits non-zero) if it
+isn't there yet.
+
 ## layout
 
 - `justfile` — `packwiz-export`, `tag`, `release`, `test-client`, `setup-user`,
