@@ -173,9 +173,12 @@ test-client:
 # defaults. With no args, auto-detects the two most recent
 # drakonixtechpack-*-client instances.
 [linux]
-[macos]
 copy-mcclient-settings old="" new="":
     bash scripts/copy-mcclient-settings.sh {{old}} {{new}}
+
+[macos]
+copy-mcclient-settings old="" new="":
+    bash scripts/copy-osx-prism-modpack-settings.sh {{old}} {{new}}
 
 [windows]
 copy-mcclient-settings old="" new="":

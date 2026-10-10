@@ -159,14 +159,18 @@ server once Prism's done downloading.
 ## Carrying over client settings on a version update
 
 ```
-just copy-mcclient-settings            # Linux/macOS, auto-detects old/new instance
+just copy-mcclient-settings            # auto-detects old/new instance
 just copy-mcclient-settings old new    # or name them explicitly
 ```
 
-On Windows this runs `scripts/copy-mcclient-settings.ps1` instead of the `.sh`
-script (same behavior - Xaero waypoints, `options.txt`, shader options, mod
-configs, server list, screenshots, saved hotbars, and any manually-added
-resourcepacks/shaderpacks). Run it right after importing a new pack version
+`just` picks the right script for your OS: `scripts/copy-mcclient-settings.sh`
+on Linux, `scripts/copy-osx-prism-modpack-settings.sh` on macOS (same logic,
+but avoids `mapfile` since macOS's default bash 3.2 doesn't have it, and
+points at Prism's `~/Library/Application Support` instances dir instead), or
+`scripts/copy-mcclient-settings.ps1` on Windows. All three do the same thing
+- Xaero waypoints, `options.txt`, shader options, mod configs, server list,
+screenshots, saved hotbars, and any manually-added resourcepacks/shaderpacks.
+Run it right after importing a new pack version
 into Prism, before customizing anything - old settings win over the fresh
 pack defaults.
 
