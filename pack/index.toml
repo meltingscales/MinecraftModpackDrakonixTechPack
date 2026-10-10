@@ -369,6 +369,11 @@ hash = "97347efd9e808841d72fe3599da8a11add8422e97f89ae1c85cdfc0acfa18f96"
 metafile = true
 
 [[files]]
+file = "mods/fasterladderclimbing.pw.toml"
+hash = "dc7c442a1c545eb95495440b311b6fe1abab1c85796fc4430fb8eb8ed0535bae"
+metafile = true
+
+[[files]]
 file = "mods/ferrite-core.pw.toml"
 hash = "73360e397134d238ee8fd21d33fd7f9275e9441f74f8f1b6ed92278877c0b9f1"
 metafile = true

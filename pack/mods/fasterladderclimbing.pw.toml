@@ -1,0 +1,13 @@
+name = "FasterLadderClimbing"
+filename = "fasterladderclimbing-neoforge-1.21.1-1.1.0-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/jAamHm5q/versions/5IYhxtHw/fasterladderclimbing-neoforge-1.21.1-1.1.0-1.21.1.jar"
+hash-format = "sha512"
+hash = "e3e9beaf240d06d13e2f30d2591375c318eda07ef9577f432b992b1df50bc3e60801e6c823aab2d0069e12e1f9edbdf47eb67b9a65b4af2860bbfe60d75b80a5"
+
+[update]
+[update.modrinth]
+mod-id = "jAamHm5q"
+version = "5IYhxtHw"
