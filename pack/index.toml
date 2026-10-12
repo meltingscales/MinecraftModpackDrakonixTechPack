@@ -634,6 +634,11 @@ hash = "09a0d9dbcec314df123a10cd560d70126365c0f15c9316376035f7f773aa7703"
 metafile = true
 
 [[files]]
+file = "mods/placebo.pw.toml"
+hash = "66721ef8bf191ccbc1ebe53ef163d2b233be19e3617dac277b16c765a67ba9c7"
+metafile = true
+
+[[files]]
 file = "mods/plushie-buddies.pw.toml"
 hash = "232cc64017e10c72eb65e1c210e6e1d14ce4391a2534912e023467dfc5f8ad1a"
 metafile = true
@@ -791,6 +796,11 @@ metafile = true
 [[files]]
 file = "mods/titanium.pw.toml"
 hash = "55df9531ad6c2db9a814bdb32c0cac04b4bc28d0ed720086d18655a0b4a622ff"
+metafile = true
+
+[[files]]
+file = "mods/toast-control.pw.toml"
+hash = "fa20fcc5ccc407316719932b62a59b7caa6829c28c28b7fd149ea82aa838b68f"
 metafile = true
 
 [[files]]
